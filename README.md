@@ -27,12 +27,23 @@ engineering-ai-agent/
 └── scripts/         # Automation scripts
 ```
 
+## Running Services
+
+| Service | URL | Container |
+|---------|-----|-----------|
+| OpenWebUI (browser AI) | http://localhost:3000 | `open-webui` |
+| n8n (automation) | http://localhost:5678 | `n8n` |
+| Ollama (local model) | http://localhost:11434 | native |
+
+> All Docker containers have `--restart always` — they come back up automatically after a reboot.
+
 ## Quick Start
 
-1. Ensure Ollama is running: `ollama serve`
+1. Ensure Ollama is running: open Ollama from system tray
 2. Open OpenWebUI: http://localhost:3000
-3. Start n8n and load workflow from `workflows/n8n/`
-4. Message Discord bot to test
+3. Open n8n: http://localhost:5678
+4. Load workflow from `workflows/n8n/` and connect Discord bot
+5. Message Discord bot to test
 
 ## Projects
 
@@ -46,6 +57,6 @@ engineering-ai-agent/
 - [x] Ollama installed + llama3.1:8b downloaded
 - [x] Docker installed
 - [x] OpenWebUI running (localhost:3000)
-- [ ] n8n installed
-- [ ] Discord bot created
-- [ ] n8n workflow connected
+- [x] n8n running (localhost:5678)
+- [ ] Discord bot created + token saved to `.env`
+- [ ] n8n workflow built and exported to `workflows/n8n/`
